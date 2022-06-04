@@ -1,3 +1,9 @@
+According to the hardware definition in the anduril1 firmware source code released
+by loneoceans and the EXTERN_TEMP_REVERSE_FORMULA conversion formula of the external
+temperature sensor in fsm-adc.c, the thermal control bug in the anduril2 firmware
+lume1 driver has been fixed, and some aux led effects have been added.
+
+
 ToyKeeper's flashlight firmware repository
 ==========================================
 

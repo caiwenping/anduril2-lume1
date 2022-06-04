@@ -1,8 +1,0 @@
-make.exe --dry-run --always-make --keep-going --print-directory
-'\\172.28.104.100\caiwenping\anduril2'
-CMD.EXE was started with the above path as the current directory.
-UNC paths are not supported.  Defaulting to Windows directory.
-
-'make.exe' is not recognized as an internal or external command,
-operable program or batch file.
-

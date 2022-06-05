@@ -1,6 +1,6 @@
 According to the hardware definition in the anduril1 firmware source code released
 by loneoceans and the EXTERN_TEMP_REVERSE_FORMULA conversion formula of the external
-temperature sensor in fsm-adc.c, the thermal control bug in the anduril2 firmware
+temperature sensor in fsm-adc.c, the thermal regulation bug in the anduril2 firmware
 lume1 driver has been fixed, and some aux led effects have been added.
 
 ![Lumintop LM10/lume1 driver](https://github.com/caiwenping/anduril2-lume1/blob/c36655ba05b55973b8d3c3755acb1bb8c7295750/IMG_20220605_140459.jpg "Lumintop LM10/lume1 driver")

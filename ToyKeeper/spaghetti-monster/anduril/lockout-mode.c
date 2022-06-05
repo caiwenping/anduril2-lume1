@@ -42,12 +42,18 @@ uint8_t lockout_state(Event event, uint16_t arg) {
         } else {  // anything except second click
             if (ramp_floors[1] < lvl) lvl = ramp_floors[1];
         }
+        #ifdef USE_AUX_RGB_LEDS
         if(lvl == ramp_floors[0]) rgb_led_set(0x2a);
         else set_level(lvl);
+        #else
+        set_level(lvl);
+        #endif
     }
     // button was released
     else if ((event & (B_CLICK | B_PRESS)) == (B_CLICK)) {
+        #ifdef USE_AUX_RGB_LEDS
         rgb_led_set(0);
+        #endif
         set_level(0);
     }
     #endif  // ifdef USE_MOON_DURING_LOCKOUT_MODE

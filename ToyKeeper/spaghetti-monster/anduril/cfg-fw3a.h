@@ -2,6 +2,13 @@
 #define MODEL_NUMBER "0311"
 #include "hwdef-FW3A.h"
 
+// the button lights up
+#define USE_INDICATOR_LED
+// the aux LEDs are behind the main LEDs
+#ifdef USE_INDICATOR_LED_WHILE_RAMPING
+#undef USE_INDICATOR_LED_WHILE_RAMPING
+#endif
+
 // ../../bin/level_calc.py 1 65 7135 1 0.8 150
 // ... mixed with this:
 // ../../../bin/level_calc.py 3 150 7135 1 0.33 150 7135 1 1 850 FET 1 10 1500

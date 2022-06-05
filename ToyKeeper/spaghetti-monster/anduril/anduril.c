@@ -223,7 +223,7 @@ void setup() {
             rgb_led_set(RGB_BLUE_HIGH);
             delay_4ms(5);
             rgb_led_set(0);
-            delay_4ms(20);
+            delay_4ms(15);
 
             rgb_led_set(RGB_RED_HIGH);
             delay_4ms(5);
@@ -232,7 +232,20 @@ void setup() {
             rgb_led_set(RGB_RED_HIGH);
             delay_4ms(5);
             rgb_led_set(0);
-            delay_4ms(60);
+            delay_4ms(40);
+        }
+        #elif defined USE_INDICATOR_LED
+        for(uint8_t count=0;count<6;count++) {
+            indicator_led(2);
+            delay_4ms(5);
+            indicator_led(0);
+            delay_4ms(8);
+
+            indicator_led(2);
+            delay_4ms(5);
+            indicator_led(0);
+            delay_4ms(8);
+            delay_4ms(30);
         }
         #else
         // or just blink main emitter if we have no AUX LED

@@ -25,11 +25,11 @@
 #define QUARTERSPEED_LEVEL 6
 
 #define RAMP_SMOOTH_FLOOR 1
-#define RAMP_SMOOTH_CEIL  120
+#define RAMP_SMOOTH_CEIL  130
 // 10, 28, 46, 65, [83], 101, 120
-#define RAMP_DISCRETE_FLOOR 10
+#define RAMP_DISCRETE_FLOOR 1
 #define RAMP_DISCRETE_CEIL  RAMP_SMOOTH_CEIL
-#define RAMP_DISCRETE_STEPS 7
+#define RAMP_DISCRETE_STEPS 5
 
 // safe limit ~30% power
 // 10 34 59 [83] 108
@@ -37,9 +37,18 @@
 #define SIMPLE_UI_CEIL 108
 #define SIMPLE_UI_STEPS 5
 
+
+#undef DEFAULT_THERM_CEIL
+#define DEFAULT_THERM_CEIL 45
 // thermal regulation parameters
 #ifdef MIN_THERM_STEPDOWN
 #undef MIN_THERM_STEPDOWN  // this should be lower, because 3x7135 instead of 1x7135
 #endif
 #define MIN_THERM_STEPDOWN 60  // lowest value it'll step down to
 #define THERM_FASTER_LEVEL (RAMP_SIZE-20)  // don't throttle back faster when high
+
+
+#undef USE_TENCLICK_THERMAL_CONFIG
+#undef USE_BIKE_FLASHER_MODE
+#undef USE_PARTY_STROBE_MODE
+#undef USE_TACTICAL_STROBE_MODE

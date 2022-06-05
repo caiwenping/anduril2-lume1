@@ -30,7 +30,6 @@
 #define PWM3_LVL OCR1B      // OCR1B is the output compare register for PB4
 #endif
 
-
 // ... except the D4S has aux LEDs under the optic
 #ifndef AUXLED_PIN
 #define AUXLED_PIN   PB2    // pin 7

@@ -42,17 +42,24 @@ uint8_t lockout_state(Event event, uint16_t arg) {
         } else {  // anything except second click
             if (ramp_floors[1] < lvl) lvl = ramp_floors[1];
         }
-        #ifdef USE_AUX_RGB_LEDS
-        if(lvl == ramp_floors[0]) rgb_led_set(0x2a);
+        
+        if(lvl == ramp_floors[0]) {
+            #ifdef USE_AUX_RGB_LEDS
+            rgb_led_set(0x2a);
+            #elif defined USE_INDICATOR_LED 
+            indicator_led(2);
+            #else
+            set_level(lvl);
+            #endif
+        }
         else set_level(lvl);
-        #else
-        set_level(lvl);
-        #endif
     }
     // button was released
     else if ((event & (B_CLICK | B_PRESS)) == (B_CLICK)) {
         #ifdef USE_AUX_RGB_LEDS
         rgb_led_set(0);
+        #elif defined USE_INDICATOR_LED
+        indicator_led(0);
         #endif
         set_level(0);
     }

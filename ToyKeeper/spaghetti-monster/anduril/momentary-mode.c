@@ -29,13 +29,14 @@ uint8_t momentary_state(Event event, uint16_t arg) {
         strobe_state(event, arg);
     }
     #endif
-
+    
     // light up when the button is pressed; go dark otherwise
     // button is being held
     if ((event & (B_CLICK | B_PRESS)) == (B_CLICK | B_PRESS)) {
         momentary_active = 1;
         // 0 = ramping, 1 = strobes
         if (momentary_mode == 0) {
+
             set_level(memorized_level);
         }
         return MISCHIEF_MANAGED;
@@ -69,7 +70,8 @@ uint8_t momentary_state(Event event, uint16_t arg) {
                 #ifdef USE_INDICATOR_LED
                 indicator_led(0);
                 #elif defined(USE_AUX_RGB_LEDS)
-                rgb_led_update(0, 0);
+                rgb_led_set(RGB_GREEN_HIGH);
+                //rgb_led_update(rgb_led_off_mode, 0);
                 #endif
             }
         #ifdef USE_STROBE_STATE

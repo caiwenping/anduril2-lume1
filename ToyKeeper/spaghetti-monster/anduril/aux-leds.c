@@ -141,7 +141,7 @@ void rgb_led_update(uint8_t mode, uint8_t arg) {
     // pick a brightness from the animation sequence
     if (pattern == 3) {
         // uses an odd length to avoid lining up with rainbow loop
-        static const uint8_t animation[] = {2, 1, 0, 0,  0, 0, 0, 0,  0,
+        static const uint8_t animation[] = {2, 1, 0, 1,  2, 0, 0, 1,  0,
                                             1, 0, 0, 0,  0, 0, 0, 0,  0, 1};
         frame = (frame + 1) % sizeof(animation);
         pattern = animation[frame];

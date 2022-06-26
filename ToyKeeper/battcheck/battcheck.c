@@ -24,6 +24,9 @@
  */
 // set some hardware-specific values...
 // (while configuring this firmware, skip this section)
+
+#define ATTINY 13
+
 #if (ATTINY == 13)
 #define F_CPU 4800000UL
 #define EEPLEN 64
@@ -111,9 +114,9 @@ void noblink() {
 
 void blink() {
     PWM_LVL = BLINK_PWM;
-    _delay_ms(100);
-    PWM_LVL = 0;
     _delay_ms(200);
+    PWM_LVL = 0;
+    _delay_ms(400);
 }
 
 int main(void)

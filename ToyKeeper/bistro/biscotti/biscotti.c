@@ -40,7 +40,7 @@
  *   Same for off-time capacitor values.  Measure, don't guess.
  */
 // Choose your MCU here, or in the build script
-//#define ATTINY 13
+#define ATTINY 13
 //#define ATTINY 25
 // FIXME: make 1-channel vs 2-channel power a single #define option
 //#define FET_7135_LAYOUT  // specify an I/O pin layout
@@ -52,6 +52,7 @@
  * =========================================================================
  * Settings to modify per driver
  */
+
 
 #define VOLTAGE_MON         // Comment out to disable LVP
 
@@ -163,7 +164,7 @@ uint8_t memory;        // mode memory, or not (set via soldered star)
 uint8_t offtim3;       // enable medium-press?
 #endif
 #ifdef TEMPERATURE_MON
-uint8_t maxtemp = 79;      // temperature step-down threshold
+uint8_t maxtemp = 45;      // temperature step-down threshold
 #endif
 #define muggle_mode 0   // simple mode designed for muggles
 // Other state variables

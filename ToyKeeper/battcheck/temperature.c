@@ -17,7 +17,7 @@
  *           ----
  */
 
-//#define ATTINY 13
+#define ATTINY 13
 //#define ATTINY 25
 #define FET_7135_LAYOUT  // specify an I/O pin layout
 // Also, assign I/O pins in this file:
@@ -56,9 +56,9 @@ void noblink() {
 
 void blink() {
     PWM_LVL = BLINK_PWM;
-    _delay_ms(100);
-    PWM_LVL = 0;
     _delay_ms(200);
+    PWM_LVL = 0;
+    _delay_ms(400);
 }
 
 int main(void)
